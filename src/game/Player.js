@@ -56,18 +56,24 @@ export default class Player {
     }
 
     draw(ctx) {
+        // nếu ảnh chưa load → không vẽ
+        if (
+            (this.y < this.ground && !this.jumpImage.complete) ||
+            (this.y >= this.ground && !this.runImage.complete)
+        ) {
+            return;
+        }
+
         if (this.y < this.ground) {
-        // nhảy
-        ctx.drawImage(
+            ctx.drawImage(
             this.jumpImage,
             this.x,
             this.y,
             this.width,
             this.height
-        );
+            );
         } else {
-        // chạy (sprite)
-        ctx.drawImage(
+            ctx.drawImage(
             this.runImage,
             this.frameIndex * this.frameWidth,
             0,
@@ -77,12 +83,13 @@ export default class Player {
             this.y,
             this.width,
             this.height
-        );
+            );
         }
         // const h = this.getHitbox();
         // ctx.strokeStyle = "red";
         // ctx.strokeRect(h.x, h.y, h.width, h.height);
     }
+
 
     getHitbox() {
         return {
