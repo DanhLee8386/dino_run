@@ -7,7 +7,7 @@ export default class Obstacle {
         this.speed = speed;
 
         this.image = new Image();
-        this.image.src = "/assets/cactus.png";
+        this.image.src = import.meta.env.BASE_URL + "assets/cactus.png";
     }
 
     update() {
