@@ -13,10 +13,11 @@ export default class Player {
 
         // sprite
         this.runImage = new Image();
-        this.runImage.src = "/assets/dino-run.png";
+        this.runImage.src = import.meta.env.BASE_URL + "assets/dino-run.png";
 
         this.jumpImage = new Image();
-        this.jumpImage.src = "/assets/dino.png";
+        this.jumpImage.src = import.meta.env.BASE_URL + "assets/dino.png";
+
 
         // animation
         this.frameIndex = 0;

@@ -4,7 +4,7 @@ export default class Ground {
         this.y = groundY + 40; // nằm dưới chân khủng long
 
         this.image = new Image();
-        this.image.src = "/assets/ground.png";
+        this.image.src = import.meta.env.BASE_URL + "assets/ground.png";
 
         this.x1 = 0;
         this.x2 = canvasWidth;
